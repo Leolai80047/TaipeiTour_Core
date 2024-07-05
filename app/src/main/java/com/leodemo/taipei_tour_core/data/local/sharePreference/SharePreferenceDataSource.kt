@@ -1,7 +1,6 @@
 package com.leodemo.taipei_tour.data.local.sharePreference
 
 import android.content.SharedPreferences
-import com.leodemo.taipei_tour_core.BuildConfig
 import javax.inject.Inject
 
 class SharePreferenceDataSource @Inject constructor(
@@ -13,7 +12,7 @@ class SharePreferenceDataSource @Inject constructor(
     }
 
     override var lastLanguage: String
-        get() = getString(LAST_LANGUAGE, BuildConfig.DEFAULT_LANGUAGE)
+        get() = getString(LAST_LANGUAGE, "")
         set(value) {
             setString(LAST_LANGUAGE, value)
         }

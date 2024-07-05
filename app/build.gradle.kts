@@ -11,7 +11,6 @@ android {
         minSdk = 21
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "DEFAULT_LANGUAGE", "\"zh-tw\"")
     }
 
     buildTypes {
@@ -29,9 +28,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
-    }
-    buildFeatures {
-        buildConfig = true
     }
 }
 
