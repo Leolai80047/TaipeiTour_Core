@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.jetbrains.kotlin.kapt)
+    alias(libs.plugins.com.google.dagger.hilt.android)
 }
 
 android {
@@ -9,7 +11,7 @@ android {
 
     defaultConfig {
         minSdk = 21
-
+        buildConfigField("String", "DOMAIN", "\"https://www.travel.taipei/\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -29,6 +31,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
@@ -41,17 +46,18 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     // sharePreference
-    implementation("androidx.preference:preference-ktx:1.2.1")
+    implementation(libs.androidx.preference.ktx)
 
     // Paging3
-    implementation("androidx.paging:paging-runtime:3.3.0")
+    implementation(libs.andoridx.paging.runtime)
 
     // retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:4.9.2")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.2.1")
+    implementation(libs.com.squareup.retrofit2.retrofit)
+    implementation(libs.com.squareup.retrofit2.converter.gson)
+    implementation(libs.com.squareup.okhttp3.okhttp)
+    implementation(libs.com.squareup.okhttp3.logging.interceptor)
 
     // hilt
-    implementation("com.google.dagger:hilt-android:2.44")
+    implementation(libs.com.google.dagger.hilt.android)
+    kapt(libs.com.google.dagger.hilt.android.compiler)
 }
