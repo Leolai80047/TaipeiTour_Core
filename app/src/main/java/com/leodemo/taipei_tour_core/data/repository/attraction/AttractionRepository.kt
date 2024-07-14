@@ -23,7 +23,7 @@ class AttractionRepository @Inject constructor(
             config = PagingConfig(
                 pageSize = 10,
                 enablePlaceholders = false,
-                initialLoadSize = 5
+                initialLoadSize = 3
             ),
             pagingSourceFactory = {
                 AttractionPagingSource(attractionApi, sharePreferenceDataSource)
