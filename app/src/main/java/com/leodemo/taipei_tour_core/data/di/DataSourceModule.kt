@@ -2,7 +2,7 @@ package com.leodemo.taipei_tour_core.data.di
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 import com.leodemo.taipei_tour.data.local.sharePreference.ShareLocalDataSource
 import com.leodemo.taipei_tour.data.local.sharePreference.SharePreferenceDataSource
 import dagger.Module
