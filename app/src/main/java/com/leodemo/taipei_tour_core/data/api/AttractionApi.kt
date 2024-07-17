@@ -1,5 +1,6 @@
 package com.leodemo.taipei_tour.data.api
 
+import com.leodemo.taipei_tour_core.data.retrofit.ApiResponse
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Path
@@ -11,5 +12,5 @@ interface AttractionApi {
         @Header("accept") accept: String = "application/json",
         @Path("lang") lang: String,
         @Query("page") page: Int = 1
-    ): AttractionResponse
+    ): ApiResponse<AttractionResponse>
 }

@@ -2,6 +2,7 @@ package com.leodemo.taipei_tour_core.data.di
 
 import com.leodemo.taipei_tour.data.api.AttractionApi
 import com.leodemo.taipei_tour_core.BuildConfig
+import com.leodemo.taipei_tour_core.data.retrofit.ApiResponseCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -38,6 +39,7 @@ object NetworkModule {
             .client(okHttpClient)
             .baseUrl(BuildConfig.DOMAIN)
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(ApiResponseCallAdapterFactory.create())
             .build()
     }
 
